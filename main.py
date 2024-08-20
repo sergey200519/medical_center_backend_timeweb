@@ -66,7 +66,3 @@ def create_reviews(review: dict, db: Session = Depends(get_db)):
     create_review(db, review)
     answer = db.query(models.Reviews).all()
     return jsonable_encoder(answer)
-
-
-if __name__ == "__main__":
-    uvicorn.run(app, port=10000)
